@@ -1,2 +1,0 @@
-class ChallengersController < ApplicationController
-end
