@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(version: 2022_06_14_050259) do
 
   create_table "quizzes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "title_id"
-    t.text "question"
-    t.text "answer1"
-    t.text "answer2"
-    t.text "answer3"
-    t.text "answer4"
-    t.integer "answer"
-    t.text "description"
+    t.integer "title_id", null: false
+    t.string "question", null: false
+    t.string "answer1", null: false
+    t.string "answer2", null: false
+    t.string "answer3", null: false
+    t.string "answer4", null: false
+    t.integer "answer", null: false
+    t.text "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

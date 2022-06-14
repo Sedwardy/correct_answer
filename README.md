@@ -38,38 +38,39 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :questions
-- has_many :challengers
+- has_one  :answer_histories
+- has_many :
 
 
-## Challengersテーブル
+## Categoriesテーブル
 |      Column        |   Type   |   Options   |
 |--------------------|----------|-------------|
-|      quiz_id       |references| null: false, foreign_key :true|
-|      nickname      |  string  | null: false |
-|       score        |  integer | null: false |
+|        name        |  string  | null: false |
+|        sort        |  integer | null: false |
+
 
 ### Association
-- belongs_to :quizzes
+- belongs_to :
 
 
-## Questionsテーブル
+## Sub_categoriesテーブル
 |      Column        |   Type   |   Options   |
 |--------------------|----------|-------------|
-|      quiz_id       |references| null: false, foreign_key :true|
-|       body         |   text   | null: false |
+|   categories_id    | integer  | null: false |
+|       name         |  string  | null: false |
+|       sort         | integer  | null: false |
 
 ### Association
-- belongs_to :quizzes
-- has_many   :choices
+- belongs_to :
+- has_many   :
 
 
-## Choicesテーブル
+## Titlesテーブル
 |      Column        |   Type   |   Options   |
 |--------------------|----------|-------------|
-|    question_id     |references| null: false, foreign_key :true|
-|       body         |   text   | null: false |
-|   correct_answer   |  integer | null: false |
+|  sub_categories_id |  integer | null: false |
+|       title        |  string  | null: false |
+|     description    |   text   | null: false |
 
 ### Association 
 - belongs_to :questions
@@ -96,9 +97,9 @@ Things you may want to cover:
 |      Column        |   Type   |   Options   |
 |--------------------|----------|-------------|
 |  sub_category_id   |  integer | null: false |
-|       title        |   text   | null: false |
+|       title        |  string  | null: false |
 |     description    |   text   | null: false |
-|     thumbnail      |   text   | null: false |
+|     thumbnail      |  string  | null: false |
 
 ### Association 
 -
@@ -106,7 +107,8 @@ Things you may want to cover:
 ## Answer historiesテーブル
 |      Column        |   Type   |   Options   |
 |--------------------|----------|-------------|
-
+|      quiz_id       |  integer | null: false |
+|      answer        |  integer | null: false |
 ### Association 
 -
 
